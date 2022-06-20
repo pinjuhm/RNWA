@@ -22,14 +22,14 @@ if ($s !== "") {
 	
 
 /**********************************************************/
-$db = mysqli_connect("localhost","id11438358_jure","Fntdqpb4TCHAE}[D");
+$db = mysqli_connect("localhost","root","");
 
 if($db) {
 
-$result = mysqli_select_db($db, "id11438358_northwind") or die("Došlo je do problema prilikom odabira baze...");
-$sql="SELECT * FROM employees where FirstName LIKE '%$s%' OR LastName LIKE '%$s%'";
+$result = mysqli_select_db($db, "hospital") or die("DoÅ¡lo je do problema prilikom odabira baze...");
+$sql="SELECT * FROM doctors where FirstName LIKE '%$s%' OR LastName LIKE '%$s%'";
 //echo $sql;
-$result2 = mysqli_query($db, $sql) or die("Došlo je do problema prilikom izvrsavanja upita...");
+$result2 = mysqli_query($db, $sql) or die("DoÅ¡lo je do problema prilikom izvrsavanja upita...");
 $n=mysqli_num_rows($result2);
 
 if ($n > 0){
